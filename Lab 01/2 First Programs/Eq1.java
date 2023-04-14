@@ -18,5 +18,6 @@ public class Eq1{
 		else{
 			System.out.println("One solution: " + (-b/a));
 		}
+		sc.close();
 	}
 } 
