@@ -1,6 +1,0 @@
-Reading Assignment: When should accessor methods be used?
-	- The first reason should be when a class has private instance variables that need to be accessed or modified from outside the class. If you make an instance variable public, then you can't change the field as the class evolves over time because you would break the external code that uses the field.
-	- Getter/setter methods often make their way in code because the coder was thinking procedurally.
-	- When a class wants to decouple the implementation of its instance variables from the way they are accessed and modified. By providing accessor methods, the class can change the implementation of its instance variables without affecting the code that uses those variables.
-	- One ramification of full field encapsulation is in user interface (UI) construction. If you can't use accessors, you can't have a UI builder class.
-	- When a class wants to provide a read-only view of its instance variables to other classes. In this case, the class can provide only getter methods and not setter methods.
