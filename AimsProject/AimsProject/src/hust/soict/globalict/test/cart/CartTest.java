@@ -1,3 +1,7 @@
+package hust.soict.globalict.test.cart;
+import hust.soict.globalict.aims.cart.Cart;
+import hust.soict.globalict.aims.disc.*;
+
 public class CartTest {
     public static void main(String[] args) {
         Cart anOrder = new Cart();

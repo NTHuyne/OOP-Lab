@@ -1,3 +1,6 @@
+package hust.soict.globalict.aims.store;
+import hust.soict.globalict.aims.disc.DigitalVideoDisc;
+
 public class Store {
     private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[1000];
     private static int totalItems = 0;
