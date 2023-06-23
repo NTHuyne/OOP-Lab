@@ -104,7 +104,7 @@ public class Aims {
                 String category = scanner.next();
                 System.out.println("Length: ");
                 int length = scanner.nextInt();
-                DigitalVideoDisc dvd = new DigitalVideoDisc(title, category, director, length, cost);
+                DigitalVideoDisc dvd = new DigitalVideoDisc(id, title, category, director, length, cost);
                 store.addMedia(dvd);
                 System.out.println("DVD added to the store.");
             } else if (type == 3) {

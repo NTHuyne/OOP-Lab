@@ -9,6 +9,12 @@ public class Book extends Media {
     public Book(){
 
     }
+    
+    public Book(String title, String category) {
+    	super();
+    	this.setCategory(category);
+    	this.setTitle(title);
+    }
 
     public Book(int id, String title, String category, float cost){
         super(id, title, category, cost);

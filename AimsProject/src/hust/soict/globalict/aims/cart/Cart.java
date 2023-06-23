@@ -4,17 +4,23 @@ import java.util.List;
 import hust.soict.globalict.aims.media.Media;
 import hust.soict.globalict.aims.media.MediaComparatorByCostTitle;
 import hust.soict.globalict.aims.media.MediaComparatorByTitleCost;
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.Collections;
 
 public class Cart {
 //    public static final int MAX_NUMBERS_ORDERED = 20;
-    private List<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
+    private FloatProperty totalCostProperty = new SimpleFloatProperty(0);
     private float total = 0;
 
     public Cart(){};
 
-    public List<Media> getItemsOrdered(){
-        return this.itemsOrdered;
+    public ObservableList<Media> getItemsOrdered(){
+        return itemsOrdered;
     }
 
     public float totalCost(){
@@ -101,7 +107,7 @@ public class Cart {
         }
     }
 
-       public void sortByTitle(){
+    public void sortByTitle(){
         Collections.sort(itemsOrdered, new MediaComparatorByTitleCost());
         System.out.println("Media sorted by title:");
         print();
@@ -112,4 +118,20 @@ public class Cart {
         System.out.println("Media sorted by cost:");
         print();
     }
+    
+    private void updateTotalCost() {
+        float total = 0;
+        for (Media media : itemsOrdered) {
+            total += media.getCost();
+        }
+        totalCostProperty.set(total);
+    }
+
+    public float getTotalCost() {
+        return totalCostProperty.get();
+    }
+
+    public FloatProperty getTotalCostProperty() {
+        return totalCostProperty;
+}
 }
