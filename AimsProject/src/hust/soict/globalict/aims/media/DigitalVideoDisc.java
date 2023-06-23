@@ -3,11 +3,10 @@ package hust.soict.globalict.aims.media;
 public class DigitalVideoDisc extends Disc implements Playable {
     private String diretor;
     private int length;
-    private static int nbDigitalVideoDiscs = 0;
+
     public String getDirector(){
         return this.diretor;
     }
-
     public int getLength() {
         return this.length;
     }
@@ -20,49 +19,27 @@ public class DigitalVideoDisc extends Disc implements Playable {
         this.length = length;
     }
 
-    public static int getNbDigitalVideoDiscs(){
-        return nbDigitalVideoDiscs;
-    }
-
     public DigitalVideoDisc(){
     	super();
     }
 
-    public DigitalVideoDisc(String title){
-        super();
-        this.setTitle(title);
-        nbDigitalVideoDiscs += 1;
-        this.setId(nbDigitalVideoDiscs);
+    public DigitalVideoDisc(int id, String title, String category, float cost){
+        super(id, title, category, cost);
     }
-
-    public DigitalVideoDisc(String title, String category, float cost){
+    
+    public DigitalVideoDisc(String title, String category, String director, int length){
         super();
+        this.setCategory(category);
         this.setTitle(title);
         this.setCategory(category);
-        this.setCost(cost);
-        nbDigitalVideoDiscs += 1;
-        this.setId(nbDigitalVideoDiscs);
-    }
-
-    public DigitalVideoDisc(String title, String category, String director, float cost){
-        super();
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-        this.setDiretor(director);
-        nbDigitalVideoDiscs += 1;
-        this.setId(nbDigitalVideoDiscs);
-    }
-
-    public DigitalVideoDisc(String title, String category, String director, int length, float cost){
-        super();
-        this.setTitle(title);
-        this.setCategory(category);
-        this.setCost(cost);
-        this.setDiretor(director);
         this.setLength(length);
-        nbDigitalVideoDiscs += 1;
-        this.setId(nbDigitalVideoDiscs);
+        
+    }
+
+    public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost){
+        super(id, title, category, cost);
+        this.setDirector(director);
+        this.setLength(length);
     }
 
     public boolean compareDVD(DigitalVideoDisc disc){

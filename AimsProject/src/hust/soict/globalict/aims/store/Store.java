@@ -15,6 +15,10 @@ public class Store {
         this.itemsInStore.add(media);
     }
 
+    public ArrayList<Media> getItemsInStore(){
+        return (ArrayList<Media>) this.itemsInStore;
+    }
+
     public void removeMedia(String title) {
         Iterator<Media> iterator = itemsInStore.iterator();
         while (iterator.hasNext()) {
